@@ -1,0 +1,27 @@
+<!-- <app-carousel></app-carousel> -->
+<div class="row">
+  <div class="col-lg-4 col-md-6 mb-4" *ngFor="let item of products">
+    <div class="card h-100">
+      <a href="#"
+        ><img class="card-img-top" src="{{ item.imageUrl }}" alt=""
+      /></a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#">{{ item.name }}</a>
+        </h4>
+        <h5>{{ item.unitPrice | currency: "S/." }}</h5>
+        <p class="card-text">
+          {{ item.description }}
+        </p>
+      </div>
+      <div class="card-footer">
+        <button
+          (click)="AddToCart(item)"
+          class="btn btn-outline-dark btn-block"
+        >
+          Agregar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
